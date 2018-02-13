@@ -1,5 +1,5 @@
 package com.kodilla.testing.collection;
-import com.kodilla.testing.collection.OddNumbersExterminator;
+//import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.*;
 
 import java.util.ArrayList;
