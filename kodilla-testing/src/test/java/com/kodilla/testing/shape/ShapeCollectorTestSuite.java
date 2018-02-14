@@ -22,7 +22,7 @@ public class ShapeCollectorTestSuite {
     public void beforeEveryTest() {
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
-        ShapeCollector shapeCollector  = new ShapeCollector();
+        shapeCollector  = new ShapeCollector();
     }
 
     @Test //czy po dodaniu nowej figury wielkość listy wynosi 1
