@@ -5,45 +5,15 @@ import java.util.List;
 
 public class ForumStatistics {
     Statistics statistics;
-    int postsCount;
-    int commentsCount;
-    int usersCount;
+    private int postsCount;
+    private int commentsCount;
+    private int usersCount;
     private double averagePostsNoPerUser;
     private double averageCommentsNoPerUser;
     private double averageCommentsPerPost;
 
     public ForumStatistics(Statistics statistics) {
         this.statistics = statistics;
-    }
-
-    public void calculateAdvStatistics(Statistics statistics){
-
-        // obliczy podane powyżej wartości i zapamięta je we właściwościach (polach) klasy
-        List<String> userNamesList = new ArrayList<String>();
-        for (String user : statistics.usersNames()){
-            userNamesList.add(user);
-        }
-        System.out.println(usersCount = userNamesList.size());
-
-        statistics.postsCount(){
-            System.out.println(postsCount);
-        }
-
-        statistics.commentsCount(){
-            System.out.println(commentsCount);
-        }
-
-
-
-    }
-
-    public double ShowStatistics(){
-        // wyświetli zapamiętane we właściwościach statystyki
-        System.out.println(averageCommentsNoPerUser = commentsCount / usersCount);
-
-        System.out.println(averageCommentsPerPost = commentsCount / postsCount);
-
-        System.out.println(averagePostsNoPerUser = postsCount / usersCount);
     }
 
     public Statistics getStatistics() {
@@ -72,5 +42,29 @@ public class ForumStatistics {
 
     public double getAverageCommentsPerPost() {
         return averageCommentsPerPost;
+    }
+
+    public void calculateAdvStatistics(Statistics statistics){
+
+        // obliczy podane powyżej wartości i zapamięta je we właściwościach (polach) klasy
+//        ArrayList<String> users = new ArrayList<String>();
+//        for (String user: statistics.usersNames()){
+//            users.add(user);
+//        }
+
+        this.usersCount = statistics.usersNames().size();
+        this.postsCount = statistics.postsCount();
+        this.commentsCount = statistics.commentsCount();
+        this.averageCommentsNoPerUser = statistics.commentsCount() / statistics.usersNames().size();
+        this.averageCommentsPerPost = statistics.commentsCount() / statistics.usersNames().size();
+        this.averagePostsNoPerUser = statistics.postsCount() / statistics.usersNames().size();
+    }
+
+    public void ShowStatistics(){
+        // wyświetli zapamiętane we właściwościach statystyki
+
+        System.out.println("Średnia ilość postów na użytkownika " + averagePostsNoPerUser);
+        System.out.println("Średnia ilość komentarzy na użytkownika " + averageCommentsNoPerUser);
+        System.out.println("Średnia ilość komentarzy na post " + averageCommentsPerPost);
     }
 }

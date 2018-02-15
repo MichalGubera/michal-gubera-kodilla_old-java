@@ -28,4 +28,5 @@ public class ForumStatisticsTestSuite {
         //Then
         Assert.assertEquals(3, usersCount);
     }
+
 }
