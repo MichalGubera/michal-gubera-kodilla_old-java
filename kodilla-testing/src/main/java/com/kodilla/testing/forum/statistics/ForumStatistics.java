@@ -44,20 +44,19 @@ public class ForumStatistics {
         return averageCommentsPerPost;
     }
 
-    public void calculateAdvStatistics(Statistics statistics){
 
-        // obliczy podane powyżej wartości i zapamięta je we właściwościach (polach) klasy
-//        ArrayList<String> users = new ArrayList<String>();
-//        for (String user: statistics.usersNames()){
-//            users.add(user);
-//        }
+    public void calculateAdvStatistics(Statistics statistics){
 
         this.usersCount = statistics.usersNames().size();
         this.postsCount = statistics.postsCount();
         this.commentsCount = statistics.commentsCount();
-        this.averageCommentsNoPerUser = statistics.commentsCount() / statistics.usersNames().size();
-        this.averageCommentsPerPost = statistics.commentsCount() / statistics.usersNames().size();
-        this.averagePostsNoPerUser = statistics.postsCount() / statistics.usersNames().size();
+        this.averageCommentsNoPerUser = ((statistics.usersNames().size()>0) ? (statistics.commentsCount()/statistics.usersNames().size()) : 0);
+        this.averageCommentsPerPost = ((statistics.postsCount()>0) ? (statistics.commentsCount()/statistics.postsCount()) : 0);
+        if(usersCount> 0){
+            this.averagePostsNoPerUser = statistics.postsCount() / statistics.usersNames().size();
+        } else {
+            this.averagePostsNoPerUser = 0;
+        }
     }
 
     public void ShowStatistics(){
