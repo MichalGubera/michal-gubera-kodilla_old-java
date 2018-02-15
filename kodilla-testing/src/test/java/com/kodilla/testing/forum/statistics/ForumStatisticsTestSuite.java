@@ -18,7 +18,7 @@ public class ForumStatisticsTestSuite {
         usersNamesList.add("Joe");
         usersNamesList.add("Mick");
         usersNamesList.add("Paul");
-        usersNamesList.add("Topper");
+
         when(statisticsMock.usersNames()).thenReturn(usersNamesList);
 
         ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
@@ -26,6 +26,6 @@ public class ForumStatisticsTestSuite {
         //When
         int usersCount = forumStatistics.calculateAdvStatistics(statisticsMock);
         //Then
-        Assert.assertEquals(4, usersCount);
+        Assert.assertEquals(3, usersCount);
     }
 }
