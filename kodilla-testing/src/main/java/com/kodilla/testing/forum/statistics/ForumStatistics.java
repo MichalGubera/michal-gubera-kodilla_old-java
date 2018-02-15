@@ -8,46 +8,69 @@ public class ForumStatistics {
     int postsCount;
     int commentsCount;
     int usersCount;
-    private int averagePostsNoPerUser;
-    private int averageCommentsNoPerUser;
-    private int averageCommentsPerPost;
+    private double averagePostsNoPerUser;
+    private double averageCommentsNoPerUser;
+    private double averageCommentsPerPost;
 
     public ForumStatistics(Statistics statistics) {
         this.statistics = statistics;
     }
 
-    public int calculateAdvStatistics(Statistics statistics){
+    public void calculateAdvStatistics(Statistics statistics){
 
         // obliczy podane powyżej wartości i zapamięta je we właściwościach (polach) klasy
         List<String> userNamesList = new ArrayList<String>();
         for (String user : statistics.usersNames()){
             userNamesList.add(user);
         }
-        return usersCount = userNamesList.size();
+        System.out.println(usersCount = userNamesList.size());
 
         statistics.postsCount(){
-            return postsCount;
+            System.out.println(postsCount);
         }
 
         statistics.commentsCount(){
-            return commentsCount;
+            System.out.println(commentsCount);
         }
 
-        this.averageCommentsNoPerUser = commentsCount / usersCount;
 
-        this.averageCommentsPerPost = commentsCount / postsCount;
-
-        this.averagePostsNoPerUser = postsCount / usersCount;
 
     }
 
-    public int ShowStatistics(){
+    public double ShowStatistics(){
         // wyświetli zapamiętane we właściwościach statystyki
-        return averageCommentsNoPerUser;
+        System.out.println(averageCommentsNoPerUser = commentsCount / usersCount);
 
-        return averageCommentsPerPost;
+        System.out.println(averageCommentsPerPost = commentsCount / postsCount);
 
+        System.out.println(averagePostsNoPerUser = postsCount / usersCount);
+    }
+
+    public Statistics getStatistics() {
+        return statistics;
+    }
+
+    public int getPostsCount() {
+        return postsCount;
+    }
+
+    public int getCommentsCount() {
+        return commentsCount;
+    }
+
+    public int getUsersCount() {
+        return usersCount;
+    }
+
+    public double getAveragePostsNoPerUser() {
         return averagePostsNoPerUser;
     }
 
+    public double getAverageCommentsNoPerUser() {
+        return averageCommentsNoPerUser;
+    }
+
+    public double getAverageCommentsPerPost() {
+        return averageCommentsPerPost;
+    }
 }
