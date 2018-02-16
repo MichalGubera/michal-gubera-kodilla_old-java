@@ -142,4 +142,29 @@ public class ForumStatisticsTestSuite {
         //Then
         Assert.assertEquals(100, forumStatistics.getUsersCount());
     }
+
+    @Test
+    public void testCalculateAdvStatisticsAdv(){
+        //Given
+        Statistics statisticsMock = mock(Statistics.class);
+        List<String> usersNamesList = new ArrayList<String>();
+        for(int i=0; i<10; i++){
+            usersNamesList.add("Name" + i);
+        }
+        when(statisticsMock.usersNames()).thenReturn(usersNamesList);
+        when(statisticsMock.postsCount()).thenReturn(100);
+        when(statisticsMock.commentsCount()).thenReturn(500);
+
+        ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
+        forumStatistics.calculateAdvStatistics(statisticsMock);
+        forumStatistics.showStatistics();
+        //When
+        double averagePostsNoPerUser = forumStatistics.getAveragePostsNoPerUser();
+        double averageCommentsNoPerUser = forumStatistics.getAverageCommentsNoPerUser();
+        double averageCommentsPerPost = forumStatistics.getAverageCommentsPerPost();
+        //Then
+        Assert.assertEquals(10, averagePostsNoPerUser,0);
+        Assert.assertEquals(50, averageCommentsNoPerUser,0);
+        Assert.assertEquals(5, averageCommentsPerPost,0);
+    }
 }

@@ -59,11 +59,11 @@ public class ForumStatistics {
         }
     }
 
-    public void ShowStatistics(){
+    public void showStatistics(){
         // wyświetli zapamiętane we właściwościach statystyki
 
-        System.out.println("Średnia ilość postów na użytkownika " + averagePostsNoPerUser);
-        System.out.println("Średnia ilość komentarzy na użytkownika " + averageCommentsNoPerUser);
-        System.out.println("Średnia ilość komentarzy na post " + averageCommentsPerPost);
+        System.out.println("Średnia ilość postów na użytkownika " + getAveragePostsNoPerUser());
+        System.out.println("Średnia ilość komentarzy na użytkownika " + getAverageCommentsNoPerUser());
+        System.out.println("Średnia ilość komentarzy na post " + getAverageCommentsPerPost());
     }
 }
