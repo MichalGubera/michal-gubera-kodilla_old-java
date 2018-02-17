@@ -149,6 +149,7 @@ public class BookDirectoryTestSuite {
 
         // Then
         assertEquals(0, theList0.size());
+        verify(libraryDatabaseMock, times(1)).listBooksInHandsOf(user1);
         assertEquals(1, theList1.size());
         assertEquals(5, theList2.size());
     }
