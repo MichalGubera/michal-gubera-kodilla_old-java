@@ -40,8 +40,8 @@ public final class ForumUser {
     @Override
     public String toString() {
         return "ForumUser{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
+                "Id=" + userId +
+                ", Name='" + userName + '\'' +
                 ", gender=" + gender +
                 ", birthDate=" + birthDate +
                 ", posts=" + posts +
