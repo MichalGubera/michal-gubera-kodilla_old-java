@@ -27,7 +27,7 @@ public class PoemBeautifier {
         }
         return reversed;
 
-//        execution in Main Class:
+//        execution in StreamMain.java:
 //        PoemBeautifier poemBeautifier = new PoemBeautifier();
 //
 //        poemBeautifier.beautify("Nam strzelać nie kazano. - Wstąpiłem na działo", PoemBeautifier :: addBeginAndEnd);
