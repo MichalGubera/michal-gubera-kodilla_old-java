@@ -21,7 +21,7 @@ public final class Forum {
         Random r5 = new Random();
         Random r6 = new Random();
         String gender = "MF";
-        for (int i=1; i<2000; i++){
+        for (int i=1; i<1500; i++){
             userList.add(new ForumUser(6 + i, "user" + i, gender.charAt(r1.nextInt(2)), r2.nextInt(2012)+1956,r3.nextInt(11)+1, r4.nextInt(27)+1, r5.nextInt(7)));
         }
     }

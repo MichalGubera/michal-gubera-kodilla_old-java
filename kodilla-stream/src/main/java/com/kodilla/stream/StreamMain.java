@@ -15,10 +15,10 @@ public class StreamMain {
         Map<Integer, ForumUser> theResultMapOfUsers = theForum.getUserList().stream()
                 .filter(forumUser -> forumUser.getGender() == 'M')
                 .filter(forumUser -> forumUser.getBirthDate().getYear() < 1998)
-                .filter(forumUser -> forumUser.getUserPosts() >= 1)
+                .filter(forumUser -> forumUser.getPosts() >= 1)
                 .collect(Collectors.toMap(ForumUser::getUserId, forumUser -> forumUser));
 
-        System.out.println("elements: " + theResultMapOfUsers.size());
+        System.out.println("# users: " + theResultMapOfUsers.size());
             theResultMapOfUsers.entrySet().stream()
                     .map(entry -> entry.getKey() + ":" + entry.getValue())
                     .forEach(System.out::println);
