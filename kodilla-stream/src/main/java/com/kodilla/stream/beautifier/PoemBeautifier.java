@@ -27,12 +27,12 @@ public class PoemBeautifier {
         }
         return reversed;
 
-//        execution in StreamMain.java:
+////        execution in StreamMain.java:
 //        PoemBeautifier poemBeautifier = new PoemBeautifier();
 //
 //        poemBeautifier.beautify("Nam strzelać nie kazano. - Wstąpiłem na działo", PoemBeautifier :: addBeginAndEnd);
-//        poemBeautifier.beautify("I spójrzałem na pole; dwieście armat grzmiało.", PoemBeautifier :: toUpper);
-//        poemBeautifier.beautify("Artyleryi ruskiej ciągną się szeregi", PoemBeautifier :: toLower);
+//        poemBeautifier.beautify("I spójrzałem na pole; dwieście armat grzmiało.", (string1) -> string1.toUpperCase());
+//        poemBeautifier.beautify("Artyleryi ruskiej ciągną się szeregi", String :: toLowerCase);
 //        poemBeautifier.beautify("Prosto, długo, daleko, jako morza brzegi;.", PoemBeautifier :: reverse);
     }
 }
