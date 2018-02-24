@@ -3,9 +3,9 @@ package com.kodilla.stream.array;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static com.kodilla.stream.array.ArrayOperations.getAverage;
+import static com.kodilla.stream.array.ArrayOperationsBU.getAverage;
 
-public class ArrayOperationsTestSuite {
+public class ArrayOperationsTestSuiteBU {
     @Test
     public void testGetAverage(){
         //Given
